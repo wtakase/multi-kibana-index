@@ -1,0 +1,22 @@
+<div class="container" ng-controller="multiKibanaIndex">
+  <div class="row">
+    <div class="col-12-sm">
+      <div class="page-header">
+        <h1>{{ title }}</h1>
+        {{ description }}
+      </div>
+      <div class="well">
+        Current kibana.index: <label>{{ currentKibanaIndex }}</label>
+        <div ng-if="username">
+          <tr>
+            <td><a href="#/{{ username }}">{{ kibanaIndexPrefix }}_{{ username }}</a></td>
+            <div ng-repeat="group in groups">
+            <td><a href="#/{{ group }}">{{ kibanaIndexPrefix }}_{{ group }}</a></td>
+            </div>
+          </tr>
+        </div>
+      </div>
+      Go back to <a href="./">Top</a> page.
+    </div>
+  </div>
+</div>
