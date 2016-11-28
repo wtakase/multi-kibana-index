@@ -6,7 +6,7 @@
 
 ## Requirement
 
-You need to install [this Kibana](https://github.com/wtakase/kibana/tree/4.5-multi-kibana-indices-with-plugin)
+You need to install [this Kibana](https://github.com/wtakase/kibana/tree/4.6-multi-kibana-index)
 
 ## development
 

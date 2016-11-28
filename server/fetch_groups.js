@@ -10,11 +10,12 @@ export default function (server, req, remoteUser, reply) {
   });
   let rolebase = config.get('multi_kibana_index.ldap.rolebase');
   let userbase = config.get('multi_kibana_index.ldap.userbase');
+  let username_attribute = config.get('multi_kibana_index.ldap.username_attribute');
   let rolename_attribute = config.get('multi_kibana_index.ldap.rolename_attribute');
 
   let searchOpts = {
     scope: 'sub',
-    filter: '(member=uid=' + remoteUser + ',' + userbase + ")",
+    filter: '(member=' + username_attribute + '=' + remoteUser + ',' + userbase + ")",
     attributes: [rolename_attribute]
   };
   let groups = [];
