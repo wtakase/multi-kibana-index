@@ -35,6 +35,7 @@ export default function (kibana) {
           url: string().default('ldap://ldap.example.com:389'),
           userbase: string().default('ou=People,dc=example,dc=com'),
           rolebase: string().default('ou=Group,dc=example,dc=com'),
+          search_filter: string().default('(cn=*)'),
           username_attribute: string().default('cn'),
           rolename_attribute: string().default('cn')
         }).default()
