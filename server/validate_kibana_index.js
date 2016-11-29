@@ -23,7 +23,7 @@ export default function (server, req, remoteUser, kibanaIndexSuffix, reply) {
 
   let searchOpts = {
     scope: 'sub',
-    filter: '(&' + search_filter + '(member=' + username_attribute + '=' + remoteUser + ',' + userbase + '))'
+    filter: '(&' + search_filter + '(member=' + username_attribute + '=' + remoteUser + ',' + userbase + '))',
     attributes: [rolename_attribute]
   };
   let groups = [];
