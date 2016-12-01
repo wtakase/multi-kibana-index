@@ -13,10 +13,15 @@ export default function (server, req, remoteUser, reply) {
   let search_filter = config.get('multi_kibana_index.ldap.search_filter');
   let username_attribute = config.get('multi_kibana_index.ldap.username_attribute');
   let rolename_attribute = config.get('multi_kibana_index.ldap.rolename_attribute');
+  let adfs = config.get('multi_kibana_index.ldap.adfs');
+  let adfs_nested = '';
+  if (adfs) {
+    adfs_nested = ':1.2.840.113556.1.4.1941:';
+  }
 
   let searchOpts = {
     scope: 'sub',
-    filter: '(&' + search_filter + '(member=' + username_attribute + '=' + remoteUser + ',' + userbase + '))',
+    filter: '(&' + search_filter + '(member' + adfs_nested + '=' + username_attribute + '=' + remoteUser + ',' + userbase + '))',
     attributes: [rolename_attribute]
   };
   let groups = [];
