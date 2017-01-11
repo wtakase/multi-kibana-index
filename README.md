@@ -1,5 +1,7 @@
 # multi_kibana_index
 
+The project has moved to [Kibana plugin: Own Home](https://github.com/wtakase/kibana-own-home).
+
 > This Kibana plugin enables to support multiple kibana.index. User can access own kibana.index and also group kibana.index by selecting on the plugin interface. kibana.index list will be generated based on username and LDAP roles.
 
 ---
